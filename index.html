@@ -1,0 +1,261 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Toronto Sound // Quote Form</title>
+		<meta name="description" content="Toronto Sound // Quote Form">
+		<meta name="author" content="Toronto Sound">
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+		<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+		</head>
+
+	<body>
+	<div class="container">
+		<div id="header">
+			<h1>Toronto Sound</h1>
+			<h2>Quote // Post Sound</h2>
+			<!-- <p>We just need a few details to know how to quote your project.</p> -->
+		</div>
+		
+		<!-- PROJECT NAME -->
+		<div id="projName" class="center">
+			<h3>What is your project's name?</h3>
+			<div>
+				<input class="entry" type="text" name="iProjName">
+			</div>
+			<div>
+				<div id="next1" class="button next">
+					Next
+					<span class="fa fa-long-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROJECT LENGTH -->
+		<div id="projLength" class="center">
+			<h3>How long is the spot?</h3>
+			<div>
+				<input class="entry" type="text" name="iProjLength">
+			</div>
+			<div>
+				<div id="prev2" class="button prev">
+					<span class="fa fa-long-arrow-left"></span>
+					Prev
+				</div>
+				<div id="next2" class="button next">
+					Next
+					<span class="fa fa-long-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- BRAND NAME -->
+		<div id="projBrandName" class="center">
+			<h3>What brand is the spot for?</h3>
+			<div>
+				<input class="entry" type="text" name="iProjBrand">
+			</div>
+			<div>
+				<div id="prev3" class="button prev">
+					<span class="fa fa-long-arrow-left"></span>
+					Prev
+				</div>
+				<div id="next3" class="button next">
+					Next
+					<span class="fa fa-long-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- AGENCY NAME -->
+		<div id="projAgencyName" class="center">
+			<h3>What agency is the spot for?</h3>
+			<div>
+				<input class="entry" type="text" name="iProjAgency">
+			</div>
+			<div>
+				<div id="prev4" class="button prev">
+					<span class="fa fa-long-arrow-left"></span>
+					Prev
+				</div>
+				<div id="next4" class="button next">
+					Next
+					<span class="fa fa-long-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- SERVICES -->
+		<div id="projServices" class="center">
+			<h3>What services do you need?</h3>
+			<div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjMM"> Mixing & Mastering</label>
+					<div class="help-tip">
+						<p>Includes ...</p>
+					</div>
+				</div>
+				<div id="mixing-more" class="extras">
+					<h4>How many discrete dialogue channels? (How many people talking in spot?)</h4>
+					<input class="entry-sm numOnly" type="text" name="mixDialogue" maxlength="2">
+					<h4>Attend mixing session in-studio: (hours)</h4>
+					<input class="entry-sm" type="text" name="mixStudioTime">
+				</div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjSD"> Sound Design</label>
+					<div class="help-tip">
+						<p>Includes ...</p>
+					</div>
+				</div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjVO"> Voiceover Recording</label>
+					<div class="help-tip">
+						<p>Includes ...</p>
+					</div>
+				</div>
+				<div id="vo-more" class="extras">
+					<h4>Do you need us to source talent?</h4>
+					<p>*(Leave unchecked if you will find talent)</p>
+					<label class="pointer"><input type="checkbox" name="voSource"> Yes, source talent for me</label>
+
+					<div id="vo-details">
+						<h4>Talent Requirements: (gender, voice type, age, tone, etc...)</h4>
+						<input class="entry-sm" type="text" name="voDetails" maxlength="144">
+						<br/>
+					</div>
+
+					<br/><br/>
+					<h4>Studio Time Required</h4>
+					<p>*(Minimum of 2 hours will be billed)</p>
+					<input class="entry-sm numOnly" type="text" name="voHours" maxlength="2">
+				</div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjAD"> ADR for Film</label>
+					<div class="help-tip">
+						<p>Includes ...</p>
+					</div>
+				</div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjMS"> Music Sourcing & Licensing</label>
+					<div class="help-tip">
+						<p>Includes ...</p>
+					</div>
+				</div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjCM"> Custom Music Composition</label>
+					<div class="help-tip">
+						<p>Includes ...</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div id="prev5" class="button prev">
+					<span class="fa fa-long-arrow-left"></span>
+					Prev
+				</div>
+				<div id="next5" class="button next">
+					Next
+					<span class="fa fa-long-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- USAGE -->
+		<div id="projUsage" class="center">
+			<h3>Spot Usage</h3>
+			<h4>What medium will this spot be played on?</h4>
+			<div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iUseTV"> TV & Broadcast</label>
+				</div>
+				<div id="tv-more" class="extras">
+					<h4>What territory is this spot being used in?</h4>
+					<label class="pointer"><input type="checkbox" name="tvNational"> National</label>
+					<label class="pointer"><input type="checkbox" name="tvMultinational"> Multinational</label>
+					<label class="pointer"><input type="checkbox" name="tvWorldwide"> Worldwide</label>
+					<h4>How long will this spot be used? (13 weeks, 52 weeks, perpetuity)</h4>
+					<input class="entry-sm" type="text" name="tvUsageLength">
+				</div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iUseWeb"> Web</label>
+				</div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iUseRadio"> Radio</label>
+				</div>
+				<div id="radio-more" class="extras">
+					<h4>What territory is this spot being used in?</h4>
+					<label class="pointer"><input type="checkbox" name="radioNational"> National</label>
+					<label class="pointer"><input type="checkbox" name="radioMultinational"> Multinational</label>
+					<label class="pointer"><input type="checkbox" name="radioWorldwide"> Worldwide</label>
+					<h4>How long will this spot be used? (13 weeks, 52 weeks, perpetuity)</h4>
+					<input class="entry-sm" type="text" name="radioUsageLength">
+				</div>
+				<div>
+					<label class="pointer"><input class="check pointer" type="checkbox" name="iUseTheatre"> Theatre</label>
+				</div>
+			</div>
+			<div>
+				<div id="prev6" class="button prev">
+					<span class="fa fa-long-arrow-left"></span>
+					Prev
+				</div>
+				<div id="next6" class="button next">
+					Review
+					<span class="fa fa-long-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROJECT REVIEW -->
+		<div id="projReview" class="center">
+			<h2>Review your project details below</h2>
+			<div id="overview">
+				<div id="reviewList">
+
+				</div>
+			</div>
+			<div>
+				<div id="prev7" class="button prev">
+					<span class="fa fa-long-arrow-left"></span>
+					Prev
+				</div>
+				<div id="next7" class="button next">
+					Confirm
+					<span class="fa fa-check"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- THANK YOU -->
+		<div id="projThanks" class="center">
+			<h3>Thank you!</h3>
+			<p>We'll be in touch shortly with a quote!</p>
+			<div>
+				<div id="prev8" class="button prev">
+					<span class="fa fa-refresh"></span>
+					New
+				</div>
+				<div id="next8" class="button next">
+					Home
+					<span class="fa fa-home"></span>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
