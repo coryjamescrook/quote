@@ -33,6 +33,24 @@
 				<input class="entry" type="text" name="iProjName">
 			</div>
 			<div>
+				<div id="next0" class="button next">
+					Next
+					<span class="fa fa-long-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+
+		<!-- PROJECT VARS -->
+		<div id="projVars" class="center">
+			<h3>How many cuts are there? (variations of same video)</h3>
+			<div>
+				<input class="entry numOnly" type="text" name="iProjVars">
+			</div>
+			<div>
+				<div id="prev1" class="button prev">
+					<span class="fa fa-long-arrow-left"></span>
+					Prev
+				</div>
 				<div id="next1" class="button next">
 					Next
 					<span class="fa fa-long-arrow-right"></span>
@@ -42,7 +60,7 @@
 
 		<!-- PROJECT LENGTH -->
 		<div id="projLength" class="center">
-			<h3>How long is the spot?</h3>
+			<h3>How long is the spot? (and variations)</h3>
 			<div>
 				<input class="entry" type="text" name="iProjLength">
 			</div>
@@ -100,7 +118,7 @@
 			<h3>What services do you need?</h3>
 			<div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjMM"> Mixing & Mastering</label>
+					<label id="serviceCheck" class="pointer"><input class="check pointer" type="checkbox" name="iProjMM"> Mixing & Mastering</label>
 					<div class="help-tip">
 						<p>Includes ...</p>
 					</div>
@@ -108,17 +126,17 @@
 				<div id="mixing-more" class="extras">
 					<h4>How many discrete dialogue channels? (How many people talking in spot?)</h4>
 					<input class="entry-sm numOnly" type="text" name="mixDialogue" maxlength="2">
-					<h4>Attend mixing session in-studio: (hours)</h4>
-					<input class="entry-sm" type="text" name="mixStudioTime">
+					<h4>Optional // Attend mix session in-studio: (# of hours)</h4>
+					<input class="entry-sm numOnly" type="text" name="mixStudioTime">
 				</div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjSD"> Sound Design</label>
+					<label id="serviceCheck" class="pointer"><input class="check pointer" type="checkbox" name="iProjSD"> Sound Design</label>
 					<div class="help-tip">
 						<p>Includes ...</p>
 					</div>
 				</div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjVO"> Voiceover Recording</label>
+					<label id="serviceCheck" class="pointer"><input class="check pointer" type="checkbox" name="iProjVO"> Voiceover Recording</label>
 					<div class="help-tip">
 						<p>Includes ...</p>
 					</div>
@@ -140,19 +158,31 @@
 					<input class="entry-sm numOnly" type="text" name="voHours" maxlength="2">
 				</div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjAD"> ADR for Film</label>
+					<label id="serviceCheck" class="pointer"><input class="check pointer" type="checkbox" name="iProjAD"> ADR for Film</label>
 					<div class="help-tip">
 						<p>Includes ...</p>
 					</div>
 				</div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjMS"> Music Sourcing & Licensing</label>
+					<label id="serviceCheck" class="pointer"><input class="check pointer" type="checkbox" name="iProjMS"> Music Sourcing & Licensing</label>
 					<div class="help-tip">
 						<p>Includes ...</p>
 					</div>
 				</div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iProjCM"> Custom Music Composition</label>
+					<label id="serviceCheck" class="pointer"><input class="check pointer" type="checkbox" name="iProjCM"> Custom Music Composition</label>
+					<div class="help-tip">
+						<p>Includes ...</p>
+					</div>
+				</div>
+				<div>
+					<label id="serviceCheck" class="pointer"><input class="check pointer" type="checkbox" name="iProjME"> Music Editing</label>
+					<div class="help-tip">
+						<p>Includes ...</p>
+					</div>
+				</div>
+				<div>
+					<label id="serviceCheck" class="pointer"><input class="check pointer" type="checkbox" name="iProjCA"> In-session Catering</label>
 					<div class="help-tip">
 						<p>Includes ...</p>
 					</div>
@@ -176,7 +206,7 @@
 			<h4>What medium will this spot be played on?</h4>
 			<div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iUseTV"> TV & Broadcast</label>
+					<label id="usageCheck" class="pointer"><input class="check pointer" type="checkbox" name="iUseTV"> TV & Broadcast</label>
 				</div>
 				<div id="tv-more" class="extras">
 					<h4>What territory is this spot being used in?</h4>
@@ -187,10 +217,10 @@
 					<input class="entry-sm" type="text" name="tvUsageLength">
 				</div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iUseWeb"> Web</label>
+					<label id="usageCheck" class="pointer"><input class="check pointer" type="checkbox" name="iUseWeb"> Web</label>
 				</div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iUseRadio"> Radio</label>
+					<label id="usageCheck" class="pointer"><input class="check pointer" type="checkbox" name="iUseRadio"> Radio</label>
 				</div>
 				<div id="radio-more" class="extras">
 					<h4>What territory is this spot being used in?</h4>
@@ -201,7 +231,7 @@
 					<input class="entry-sm" type="text" name="radioUsageLength">
 				</div>
 				<div>
-					<label class="pointer"><input class="check pointer" type="checkbox" name="iUseTheatre"> Theatre</label>
+					<label id="usageCheck" class="pointer"><input class="check pointer" type="checkbox" name="iUseTheatre"> Theatre</label>
 				</div>
 			</div>
 			<div>
@@ -222,6 +252,15 @@
 			<div id="overview">
 				<div id="reviewList">
 
+				</div>
+				<hr/>
+				<div>
+					<h2>Your Name: </h2>
+					<input class="entry-sm" type="text" name="enquiryName">
+				</div>
+				<div>
+					<h2>Your Email: </h2>
+					<input class="entry-sm" type="email" name="enquiryEmail">
 				</div>
 			</div>
 			<div>
@@ -252,7 +291,10 @@
 			</div>
 		</div>
 
-	</div>
+		<!-- ERROR PROMPT -->
+		<div id="errPrompt">
+			<p id="thePrompt"></p>
+		</div>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>

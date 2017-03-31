@@ -1,5 +1,9 @@
 $(document).ready(function() {
+	
+	//// INITIALIZE ////
+	$('#errPrompt').hide();
 	$('#projName').hide();
+	$('#projVars').hide();
 	$('#projLength').hide();
 	$('#projBrandName').hide();
 	$('#projAgencyName').hide();
@@ -18,7 +22,62 @@ $(document).ready(function() {
 	$('#projName').fadeIn(800);
 	$('input[name=iProjName]').focus();
 
+	//// Error Handler Disappear ////
+	$('#errPrompt').click(function() {
+		$('#errPrompt').fadeOut(800);
+	});
 
+	//// ENTER HANDLERS ////
+	// Project Name //
+	$('input[name=iProjName]').keypress(function(e) {
+	    if(e.which == 13) {
+	    	$("#next0").click();
+	    }
+	});
+
+	// Project Vars //
+	$('input[name=iProjVars]').keypress(function(e) {
+	    if(e.which == 13) {
+	    	$("#next1").click();
+	    }
+	});
+
+	// Project Length //
+	$('input[name=iProjLength]').keypress(function(e) {
+	    if(e.which == 13) {
+	    	$("#next2").click();
+	    }
+	});
+
+	// Project Brand //
+	$('input[name=iProjBrand]').keypress(function(e) {
+	    if(e.which == 13) {
+	    	$("#next3").click();
+	    }
+	});
+
+	// Project Agency //
+	$('input[name=iProjAgency]').keypress(function(e) {
+	    if(e.which == 13) {
+	    	$("#next4").click();
+	    }
+	});
+
+	// Project Review //
+	$('input[name=enquiryName]').keypress(function(e) {
+	    if(e.which == 13) {
+	    	$("#next7").click();
+	    }
+	});
+
+	$('input[name=enquiryEmail]').keypress(function(e) {
+	    if(e.which == 13) {
+	    	$("#next7").click();
+	    }
+	});
+	
+
+	//// Additional Info ////
 	$('input[name=iProjMM]').click(function() {
 	    if($(this).is(":checked")) {
 	        $("#mixing-more").fadeIn(300);
@@ -80,22 +139,52 @@ $(document).ready(function() {
         }
     });
 
-	$('#next1').click(function() {
-		$('#projName').hide();
-		$('#projLength').fadeIn(800);
-		$('input[name=iProjLength]').focus();
+
+	//// NEXT HANDLERS ////
+
+	$('#next0').click(function() {
+		if ($('input[name=iProjName]').val() !== "") {
+			$('#projName').hide();
+			$('#projVars').fadeIn(800);
+			$('input[name=iProjVars]').focus();
+		}
+		else {
+			errPrompt(1);
+		}
 	});
 
-	$('#prev2').click(function() {
-		$('#projLength').hide();
+	$('#prev1').click(function() {
+		$('#projVars').hide();
 		$('#projName').fadeIn(800);
 		$('input[name=iProjName]').focus();
 	});
 
-	$('#next2').click(function() {
+	$('#next1').click(function() {
+		if ($('input[name=iProjVars]').val() !== "") {
+			$('#projVars').hide();
+			$('#projLength').fadeIn(800);
+			$('input[name=iProjLength]').focus();
+		}
+		else {
+			errPrompt(2);
+		}
+	});
+
+	$('#prev2').click(function() {
 		$('#projLength').hide();
-		$('#projBrandName').fadeIn(800);
-		$('input[name=iProjBrand]').focus();
+		$('#projVars').fadeIn(800);
+		$('input[name=iProjVars]').focus();
+	});
+
+	$('#next2').click(function() {
+		if ($('input[name=iProjLength]').val() !== "") {
+			$('#projLength').hide();
+			$('#projBrandName').fadeIn(800);
+			$('input[name=iProjBrand]').focus();
+		}
+		else {
+			errPrompt(3);
+		}
 	});
 
 	$('#prev3').click(function() {
@@ -105,9 +194,14 @@ $(document).ready(function() {
 	});
 
 	$('#next3').click(function() {
-		$('#projBrandName').hide();
-		$('#projAgencyName').fadeIn(800);
-		$('input[name=iProjAgency]').focus();
+		if ($('input[name=iProjBrand]').val() !== "") {
+			$('#projBrandName').hide();
+			$('#projAgencyName').fadeIn(800);
+			$('input[name=iProjAgency]').focus();
+		}
+		else {
+			errPrompt(4);
+		}
 	});
 
 	$('#prev4').click(function() {
@@ -117,8 +211,13 @@ $(document).ready(function() {
 	});
 
 	$('#next4').click(function() {
-		$('#projAgencyName').hide();
-		$('#projServices').fadeIn(800);
+		if ($('input[name=iProjAgency]').val() !== "") {
+			$('#projAgencyName').hide();
+			$('#projServices').fadeIn(800);
+		}
+		else {
+			errPrompt(5);
+		}
 	});
 
 	$('#prev5').click(function() {
@@ -127,8 +226,14 @@ $(document).ready(function() {
 	});
 
 	$('#next5').click(function() {
-		$('#projServices').hide();
-		$('#projUsage').fadeIn(800);
+		if ($("#serviceCheck input[type=checkbox]").filter(':checked').length > 0) {
+		    $('#projServices').hide();
+			$('#projUsage').fadeIn(800);
+		}
+		else {
+			errPrompt(6);
+		}
+			
 	});
 
 	$('#prev6').click(function() {
@@ -137,9 +242,14 @@ $(document).ready(function() {
 	});
 
 	$('#next6').click(function() {
-		$('#projUsage').hide();
-		doReview();
-		$('#projReview').fadeIn(800);
+		if ($("#usageCheck input[type=checkbox]").filter(':checked').length > 0) {
+			$('#projUsage').hide();
+			doReview();
+			$('#projReview').fadeIn(800);
+		}
+		else {
+			errPrompt(7);
+		}
 	});
 
 	$('#prev7').click(function() {
@@ -148,8 +258,13 @@ $(document).ready(function() {
 	});
 
 	$('#next7').click(function() {
-		$('#projReview').hide();
-		$('#projThanks').fadeIn(800);
+		if ($('input[name=enquiryName]').val() !== "" && $('input[name=enquiryEmail]').val() !== "") {
+			$('#projReview').hide();
+			$('#projThanks').fadeIn(800);
+		}
+		else {
+			errPrompt(8);
+		}
 	});
 
 	$('#prev8').click(function() {
@@ -176,30 +291,34 @@ $(document).ready(function() {
 
 		//// Textboxes ////
 		// 0 - name
-		// 1 - length
-		// 2 - brand
-		// 3 - agency
-		// 4 - dialogue channels
-		// 5 - mix hours in studio
-		// 6 - talent requirements
-		// 7 - vo studio time
-		// 8 - tv length
-		// 9 - radio length
+		// 1 - vars
+		// 2 - length
+		// 3 - brand
+		// 4 - agency
+		// 5 - dialogue channels
+		// 6 - mix hours in studio
+		// 7 - talent requirements
+		// 8 - vo studio time
+		// 9 - tv length
+		// 10 - radio length
 		
 		var i;
-		for (i = 0; i < 4; ++i) {
+		for (i = 0; i < 5; ++i) {
 		    if (textBoxes[i] !== "") {
 		    	switch (i) {
 			    	case 0:
 			    		$( "#reviewList" ).append( "<p><strong>Project Name:</strong> " + textBoxes[i] + "</p>" );
 			    		break;
 			    	case 1:
-			    		$( "#reviewList" ).append( "<p><strong>Spot Length:</strong> " + textBoxes[i] + "</p>" );
+			    		$( "#reviewList" ).append( "<p><strong>Variations:</strong> " + textBoxes[i] + "</p>" );
 			    		break;
 			    	case 2:
-			    		$( "#reviewList" ).append( "<p><strong>Brand:</strong> " + textBoxes[i] + "</p>" );
+			    		$( "#reviewList" ).append( "<p><strong>Spot Length:</strong> " + textBoxes[i] + "</p>" );
 			    		break;
 			    	case 3:
+			    		$( "#reviewList" ).append( "<p><strong>Brand:</strong> " + textBoxes[i] + "</p>" );
+			    		break;
+			    	case 4:
 			    		$( "#reviewList" ).append( "<p><strong>Agency:</strong> " + textBoxes[i] + "</p>" );
 			    		break;
 			    }
@@ -212,14 +331,14 @@ $(document).ready(function() {
 		    	case "iProjMM":
 		    		$( "#reviewList" ).append( "<p><strong>Mix & Master Required</strong></p>" );
 		    		var k;
-					for (k = 4; k < 6; ++k) {
+					for (k = 5; k < 7; ++k) {
 						if (textBoxes[k] !== "") {
 							switch (k) {
-						    	case 4:
+						    	case 5:
 						    		$( "#reviewList" ).append( "<p><strong># Dialogue Channels:</strong> " + textBoxes[k] + "</p>" );
 						    		break;
-						    	case 5:
-						    		$( "#reviewList" ).append( "<p><strong>Mix Hours in Studio:</strong> " + textBoxes[k] + "</p>" );
+						    	case 6:
+						    		$( "#reviewList" ).append( "<p><strong>Mix Hours in Studio:</strong> " + textBoxes[k] + " hours</p>" );
 						    		break;
 				    		}
 					    }
@@ -231,14 +350,14 @@ $(document).ready(function() {
 		    	case "iProjVO":
 		    		$( "#reviewList" ).append( "<p><strong>Voiceover Recording Required</strong></p>" );
 		    		var k;
-					for (k = 6; k < 8; ++k) {
+					for (k = 7; k < 9; ++k) {
 						if (textBoxes[k] !== "") {
 							switch (k) {
-						    	case 6:
+						    	case 7:
 						    		$( "#reviewList" ).append( "<p><strong>Talent Requirements:</strong> " + textBoxes[k] + "</p>" );
 						    		break;
-						    	case 7:
-						    		$( "#reviewList" ).append( "<p><strong>VO Studio Time:</strong> " + textBoxes[k] + "</p>" );
+						    	case 8:
+						    		$( "#reviewList" ).append( "<p><strong>VO Studio Time:</strong> " + textBoxes[k] + " hours</p>" );
 						    		break;
 						    }
 					    }
@@ -255,6 +374,12 @@ $(document).ready(function() {
 		    		break;
 		    	case "iProjCM":
 		    		$( "#reviewList" ).append( "<p><strong>Custom Music Composition Required</strong></p>" );
+		    		break;
+		    	case "iProjME":
+		    		$( "#reviewList" ).append( "<p><strong>Music Editing Required</strong></p>" );
+		    		break;
+		    	case "iProjCA":
+		    		$( "#reviewList" ).append( "<p><strong>In-session Catering Requested</strong></p>" );
 		    		break;
 		    }
 		}
@@ -278,8 +403,8 @@ $(document).ready(function() {
 					    		break;
 			    		}
 		    		}
-		    		if (textBoxes[8] !== "") {
-		    			$( "#reviewList" ).append( "<p><strong>TV Usage Length:</strong> " + textBoxes[8] + "</p>" );
+		    		if (textBoxes[9] !== "") {
+		    			$( "#reviewList" ).append( "<p><strong>TV Usage Length:</strong> " + textBoxes[9] + "</p>" );
 		    		}
 		    		break;
 		    	case "iUseWeb":
@@ -301,8 +426,8 @@ $(document).ready(function() {
 					    		break;
 			    		}
 		    		}
-		    		if (textBoxes[9] !== "") {
-		    			$( "#reviewList" ).append( "<p><strong>Radio Usage Length:</strong> " + textBoxes[9] + "</p>" );
+		    		if (textBoxes[10] !== "") {
+		    			$( "#reviewList" ).append( "<p><strong>Radio Usage Length:</strong> " + textBoxes[10] + "</p>" );
 		    		}
 		    		break;
 		    	case "iUseTheatre":
@@ -314,3 +439,58 @@ $(document).ready(function() {
 	};
 
 });
+
+function errPrompt(errCode) {
+	switch (errCode) {
+		case 1:
+			$('#thePrompt').html("");
+			$('#thePrompt').html("<p id='thePrompt'>Please enter a project name</p>");
+			$('input[name=iProjName]').focus();
+			$('#errPrompt').fadeIn(500).delay(3000).fadeOut(800);
+			break;
+		case 2:
+			$('#thePrompt').html("");
+			$('#thePrompt').html("<p id='thePrompt'>Please enter the number of variations</p>");
+			$('input[name=iProjVars]').focus();
+			$('#errPrompt').fadeIn(500).delay(3000).fadeOut(800);
+			break;
+		case 3:
+			$('#thePrompt').html("");
+			$('#thePrompt').html("<p id='thePrompt'>Please enter the length of the spot</p>");
+			$('input[name=iProjLength]').focus();
+			$('#errPrompt').fadeIn(500).delay(3000).fadeOut(800);
+			break;
+		case 4:
+			$('#thePrompt').html("");
+			$('#thePrompt').html("<p id='thePrompt'>Please enter a brand</p>");
+			$('input[name=iProjBrand]').focus();
+			$('#errPrompt').fadeIn(500).delay(3000).fadeOut(800);
+			break;
+		case 5:
+			$('#thePrompt').html("");
+			$('#thePrompt').html("<p id='thePrompt'>Please enter an agency name</p>");
+			$('input[name=iProjAgency]').focus();
+			$('#errPrompt').fadeIn(500).delay(3000).fadeOut(800);
+			break;
+		case 6:
+			$('#thePrompt').html("");
+			$('#thePrompt').html("<p id='thePrompt'>Please select at least ONE service</p>");
+			$('#errPrompt').fadeIn(500).delay(3000).fadeOut(800);
+			break;
+		case 7:
+			$('#thePrompt').html("");
+			$('#thePrompt').html("<p id='thePrompt'>Please select at least ONE usage</p>");
+			$('#errPrompt').fadeIn(500).delay(3000).fadeOut(800);
+			break;
+		case 8:
+			$('#thePrompt').html("");
+			$('#thePrompt').html("<p id='thePrompt'>Please enter your name AND email</p>");
+			$('input[name=enquiryName]').focus();
+			$('#errPrompt').fadeIn(500).delay(3000).fadeOut(800);
+			break;
+		
+	}
+};
+
+
+
