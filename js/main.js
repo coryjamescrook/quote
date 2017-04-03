@@ -250,6 +250,7 @@ $(document).ready(function() {
 			$('#projUsage').hide();
 			doReview();
 			$('#projReview').fadeIn(800);
+			$('textarea[name=enquiryName]').focus();
 		}
 		else {
 			errPrompt(7);
