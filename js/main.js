@@ -27,6 +27,10 @@ $(document).ready(function() {
 		$('#errPrompt').fadeOut(800);
 	});
 
+	$('#thePrompt').click(function() {
+		$('#errPrompt').fadeOut(800);
+	});
+
 	//// ENTER HANDLERS ////
 	// Project Name //
 	$('input[name=iProjName]').keypress(function(e) {
