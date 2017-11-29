@@ -1,23 +1,6 @@
 $(document).ready(function() {
 	
 	//// INITIALIZE ////
-	$('#errPrompt').hide();
-	$('#projName').hide();
-	$('#projVars').hide();
-	$('#projLength').hide();
-	$('#projBrandName').hide();
-	$('#projAgencyName').hide();
-	$('#projServices').hide();
-	$('#projUsage').hide();
-	$('#projReview').hide();
-	$('#projThanks').hide();
-
-	$('#mixing-more').hide();
-	$('#vo-more').hide();
-	$('#vo-details').hide();
-	$('#radio-more').hide();
-	$('#tv-more').hide();
-
 
 	$('#projName').fadeIn(800);
 	$('input[name=iProjName]').focus();

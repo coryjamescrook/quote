@@ -226,6 +226,67 @@ textarea {
 	left:0;
 }
 
+#errPrompt {
+	display: none;
+}
+
+#projName {
+	display: none;
+}
+
+#projVars {
+	display: none;
+}
+
+#projLength {
+	display: none;
+}
+
+#projBrandName {
+	display: none;
+}
+
+#projAgencyName {
+	display: none;
+}
+
+#projServices {
+	display: none;
+}
+
+#projUsage {
+	display: none;
+}
+
+#projReview {
+	display: none;
+}
+
+#projThanks {
+	display: none;
+}
+
+#mixing-more {
+	display: none;
+}
+
+#vo-more {
+	display: none;
+}
+
+#vo-details {
+	display: none;
+}
+
+#radio-more {
+	display: none;
+}
+
+#tv-more {
+	display: none;
+}
+
+
 /* CSS animation */
 
 @-webkit-keyframes fadeIn {
